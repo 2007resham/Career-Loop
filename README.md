@@ -6,4 +6,4 @@ Another key feature is the AI Resume Analyzer, which evaluates a student’s res
 The Skill Exchanger feature allows students to teach subjects or skills they are good at. Other students can enroll in these sessions for a minimal fee, creating a peer-to-peer learning system where both the teacher and learner benefit.
 Overall, Career-Loop is designed as a comprehensive platform that combines social interaction, academic tools, and skill-based opportunities to help students grow academically and professionally.
 
-Created by : Resham Singh
+Created by : Resham Singh, Sahaj and Vansh.
