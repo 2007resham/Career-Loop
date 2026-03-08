@@ -334,12 +334,12 @@ nav a:hover{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    width: 35%;
     position: relative;
     cursor: pointer;
     min-width: 400px;
     transition: 0.5s;
-    mix-blend-mode: difference;
+    mix-blend-mode: exclusion;
 }
 
 .tool-vidbox video{
@@ -348,6 +348,7 @@ nav a:hover{
     box-shadow: 0 0 10px lightgray;
     border-radius: 20px;
     transition: 0.5s;
+    height: 250px;
 }
 
 .tool-vidbox video:hover{
@@ -371,4 +372,34 @@ nav a:hover{
     margin-top: 0;
     margin-bottom: 10px;
     max-width: 450px;
+    background: linear-gradient(to right, #008baa, #7e42a7, #6600c5, #6070fd, #2a46ff, #0099ff, #008ead);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animation-gradient 2.5s linear infinite;
+}
+
+.tool-info p{
+    width: 90%;
+    max-width: 400px;
+    min-width: 300px;
+    margin-bottom: 50px;
+    margin-top: 0;
+}
+
+.tool-info button{
+    color:#e7e7e7;
+    padding:10px 15px;
+    border-radius: 10px;
+    border: 1px solid #727fdeb4;
+    background-color: #2200493d;
+    box-shadow: 0 0 5px #727fde86;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tool-info button:hover{
+    box-shadow: 0 0 15px #727fde86;
+    opacity: 0.7;
 }
