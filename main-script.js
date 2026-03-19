@@ -14,3 +14,49 @@ videolist.forEach(function(video){
         video.pause()
     })
 })
+
+// chatbot 
+document.addEventListener("DOMContentLoaded", function () {
+  const chatbotContainer = document.getElementById("chatbot-container");
+  const sendBtn = document.getElementById("send-btn");
+  const chatbotInput = document.getElementById("chatbot-input");
+  const chatbotMessages = document.getElementById("chatbot-messages");
+
+  const chatbotIcon = document.getElementById("chatbot-icon");
+  const closeButton = document.getElementById("close-btn");
+
+ 
+  chatbotIcon.addEventListener("click", function () {
+    chatbotContainer.classList.remove("hidden");
+    chatbotIcon.style.display = "none"; 
+  });
+
+  closeButton.addEventListener("click", function () {
+    chatbotContainer.classList.add("hidden");
+    chatbotIcon.style.display = "flex";
+  });
+
+  sendBtn.addEventListener("click", sendMessage);
+  chatbotInput.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      sendMessage();
+    }
+  });
+
+  function sendMessage() {
+    const userMessage = chatbotInput.value.trim();
+    if (userMessage) {
+      appendMessage("user", userMessage);
+      chatbotInput.value = "";
+      getBotResponse(userMessage);
+    }
+  }
+
+    function appendMessage(sender, message) {
+      const messageElement = document.createElement("div");
+      messageElement.classList.add("message", sender);
+      messageElement.textContent = message;
+      chatbotMessages.appendChild(messageElement);
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+  });
