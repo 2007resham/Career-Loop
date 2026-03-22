@@ -939,3 +939,58 @@ nav a:hover{
     box-shadow: 0 0 300px 300px rgba(181, 47, 226, 0.10);
     mix-blend-mode: lighten;
 }
+
+/* footer */
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    height: 200px;
+}
+
+footer h1{
+    margin-left: 5%;
+    color: gray;
+    font-size: 30px;
+}
+
+footer .box-icons{
+    margin-right: 5%;
+    display: flex;
+    gap: 20px;
+}
+
+footer .box-icons a{
+    color: gray;
+    border-radius: 50%;
+    font-size: 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    transition: 0.5s;
+    border: 0.5px solid rgba(107, 88, 116, 0.5);
+}
+
+footer .box-icons a:hover{
+    box-shadow: 0 0 15px white;
+}
+
+.autodisplay{
+    animation: autodisplayanimation;
+    animation-timeline: view();
+}
+
+@keyframes autodisplayanimation{
+    from{
+        filter: blur(10px);
+        transform: translateY(-200px) scale(0.5);
+    }
+    50%{
+        filter: blur(0px);
+        transform: translateY(0) scale(1);
+    }
+}

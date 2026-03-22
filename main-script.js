@@ -3,8 +3,9 @@ const video2 = document.getElementById('toolvideo2');
 const video3 = document.getElementById('toolvideo3');
 const video4 = document.getElementById('toolvideo4');
 const video5 = document.getElementById('toolvideo5');
+const video6 = document.getElementById('toolvideo6');
 
-const videolist = [video1,video2,video3,video4,video5];
+const videolist = [video1,video2,video3,video4,video5,video6];
 
 videolist.forEach(function(video){
     video.addEventListener('mouseover',function(){
@@ -65,6 +66,8 @@ document.addEventListener("DOMContentLoaded", function () {
 const signinButton = document.getElementById('signinButton');
 const signinPage = document.getElementById('signinPage');
 const closeIcon = document.getElementById('closeIcon');
+const getstarted = document.getElementById('getstarted');
+const closesignin = document.getElementById('closesignin');
 
 signinButton.addEventListener("click", function(){
   signinPage.classList.remove("closeSignin");
@@ -73,6 +76,18 @@ signinButton.addEventListener("click", function(){
 })
 
 closeIcon.addEventListener("click", function(){
+  signinPage.classList.remove("openSignin");
+  document.body.classList.remove("no-scroll");
+  signinPage.classList.add("closeSignin")
+})
+
+getstarted.addEventListener("click",function(){
+  signinPage.classList.remove("closeSignin");
+  document.body.classList.add("no-scroll");
+  signinPage.classList.add("openSignin");
+})
+
+closesignin.addEventListener("click", function(){
   signinPage.classList.remove("openSignin");
   document.body.classList.remove("no-scroll");
   signinPage.classList.add("closeSignin")
@@ -89,7 +104,6 @@ document.addEventListener("mousemove", (event) => {
 });
 
 function animate() {
-  // smooth delay (lerp)
   currentX += (mouseX - currentX) * 0.08;
   currentY += (mouseY - currentY) * 0.08;
 
