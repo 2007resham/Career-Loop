@@ -60,3 +60,45 @@ document.addEventListener("DOMContentLoaded", function () {
       chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
     }
   });
+
+// signin
+const signinButton = document.getElementById('signinButton');
+const signinPage = document.getElementById('signinPage');
+const closeIcon = document.getElementById('closeIcon');
+
+signinButton.addEventListener("click", function(){
+  signinPage.classList.remove("closeSignin");
+  document.body.classList.add("no-scroll");
+  signinPage.classList.add("openSignin")
+})
+
+closeIcon.addEventListener("click", function(){
+  signinPage.classList.remove("openSignin");
+  document.body.classList.remove("no-scroll");
+  signinPage.classList.add("closeSignin")
+})
+
+
+// parallax 
+let mouseX = 0, mouseY = 0;
+let currentX = 0, currentY = 0;
+
+document.addEventListener("mousemove", (event) => {
+  mouseX = event.clientX / window.innerWidth - 0.5;
+  mouseY = event.clientY / window.innerHeight - 0.5;
+});
+
+function animate() {
+  // smooth delay (lerp)
+  currentX += (mouseX - currentX) * 0.08;
+  currentY += (mouseY - currentY) * 0.08;
+
+  document.querySelectorAll(".parallax").forEach((element) => {
+    const speed = element.getAttribute("data-speed");
+    element.style.transform = `translate(${currentX * speed * 20}px, ${currentY * speed * 20}px)`;
+  });
+
+  requestAnimationFrame(animate);
+}
+
+animate();

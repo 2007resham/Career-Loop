@@ -48,6 +48,148 @@ body {
     overflow: hidden;
 }
 
+/* sign-in */
+.signin-page-box{
+    position: fixed;
+    width: 30%;
+    height: 60vh;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    filter: blur(10px);
+    z-index: 999;
+}
+
+.signin-page{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.489);
+    border-radius: 20px;
+}
+
+.signin-page h1{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 10%;
+}
+
+.signin-page input{
+    padding: 7.5px 30px;
+    background-color: lightgray;
+    width: 60%;
+    height: 35px;
+    border: none;
+    outline: none;
+    clip-path: polygon(0 0, 93% 0, 100% 43%, 100% 80%, 100% 99%, 0 100%, 0% 80%, 0% 20%);
+    border-radius: 5px;
+    margin-bottom: 5%;
+    transition: 0.3s;
+}
+
+.signin-page input:hover{
+    background-color: rgba(211, 211, 211, 0.807);
+}
+
+.signin-page button{
+    width: 50%;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #7e00d2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #e7e7e7;
+    margin-bottom: 5%;
+    transition: 0.3s;
+}
+
+.signin-page button:hover{
+    background-color: #7e00d296;
+}
+
+.signin-page a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    justify-content: center;
+    width: 50%;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: gray;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #e7e7e7;
+    transition: 0.3s;
+}
+
+.signin-page a:hover{
+    background-color: rgba(128, 128, 128, 0.756);
+}
+
+.signin-page div{
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    font-style: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.signin-page div:hover{
+    opacity: 0.7;
+}
+
+/* open signin  */
+.openSignin{
+    animation: openSigninAnimation 0.7s forwards;
+}
+
+@keyframes openSigninAnimation{
+    from {
+        opacity: 0;
+        filter: blur(10px);
+        top: 80%;
+    }
+    to{
+        filter: blur(0);
+        opacity: 1;
+        top: 50%;
+    }
+}
+
+/* close signin  */
+.closeSignin{
+    animation: closeSigninAnimation 0.7s forwards;
+}
+
+@keyframes closeSigninAnimation{
+    from{
+        filter: blur(0);
+        opacity: 1;
+        top: 50%;
+    }
+    to{
+        opacity: 0;
+        filter: blur(10px);
+        top: 80%;
+    }
+}
+
+/* no scroll  */
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
+
 /* header */
 header{
     display: flex;
@@ -108,9 +250,7 @@ nav a:hover{
 
 .content{
     max-width: 40rem;
-    margin-left: 10%;
-    z-index: 999;
-
+    margin-left: 7%;
 }
 
 .tag-box{
@@ -203,7 +343,8 @@ nav a:hover{
 .robot-3d{
     position: absolute;
     top: 0;
-    right: -30%;
+    right: -28%;
+    z-index: -1;
 }
 
 
@@ -316,7 +457,6 @@ nav a:hover{
     align-items: center;
     position: relative;
     width: 100%;
-    height: 100vh;
     margin-top: 200px;
 }
 
@@ -402,6 +542,10 @@ nav a:hover{
 .tool-info button:hover{
     box-shadow: 0 0 15px #727fde86;
     opacity: 0.7;
+}
+
+.tools .section-title{
+    margin-bottom: 70px;
 }
 
 /* Floating Chat Icon */
@@ -531,4 +675,136 @@ nav a:hover{
 
 #send-btn:hover {
   background-color: #611067;
+}
+
+/* pricing section  */
+.price-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pricing-section{
+    width: 95%;
+    height: 2000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.pricing-img-box{
+    position: relative;
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pricing-img-box img{
+    position: absolute;
+    top: 20%;
+}
+
+.pricing-img-box img:nth-child(2){
+    height: 350px;
+    margin-top: 5%;
+}
+
+.title{
+    font-size: 60px;
+    color: #e7e7e7;
+    text-align: center;
+}
+
+.price-box{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    width: 30%;
+    height: 1000px;
+    border: 0.5px solid rgba(107, 88, 116, 0.5);
+    padding: 30px;
+    border-radius: 50px;
+    margin-top: 50px;
+}
+
+.pricing-container{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    column-gap: 20px;
+}
+
+.parallax{
+    transition: transfrom 0.4s ease-out;
+}
+
+.price-box h1{
+    font-size: 40px;
+    color: #ffc786;
+    margin-bottom: 20px;
+}
+
+.price-box h3{
+    font-size: 40px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.price-box button{
+    border: none;
+    background-color: gray;
+    color: black;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+    clip-path: polygon(0 0, 96% 0, 100% 35%, 100% 80%, 100% 100%, 0 100%, 0% 80%, 0% 20%);
+}
+
+.price-box button:hover{
+    background-color: rgb(183, 183, 183);
+}
+
+.price-box p{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    color: rgba(127, 109, 135);
+    max-width: 500px;
+    border-top: 0.5px solid rgba(107, 88, 116, 0.5);
+    padding-top: 20px;
+    margin: 0;
+}
+
+.price-box p img{
+    height: 30px;
+    margin-right: 20px;
+}
+
+.price-box:nth-child(2){
+    margin-top: 20px;
+    height: 1050px;
+}
+
+.price-box:nth-child(2) h1{
+    color: #7e00d2;
+}
+
+.price-box:nth-child(3) h1{
+    color: #ff776f;
+}
+
+.pricing-section a{
+    color: #e7e7e7;
+    font-size: 20px;
+    margin-top: 70px;
 }
