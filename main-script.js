@@ -116,3 +116,27 @@ function animate() {
 }
 
 animate();
+
+// Sidebar
+const hamburger = document.getElementById('hamburger');
+const sidebar = document.getElementById('sidebar');
+const sidebarOverlay = document.getElementById('sidebarOverlay');
+const closeSidebar = document.getElementById('closeSidebar');
+
+hamburger.addEventListener('click', function () {
+    sidebar.classList.add('open');
+    sidebarOverlay.classList.add('active');
+    document.body.classList.add('no-scroll');
+});
+
+closeSidebar.addEventListener('click', function () {
+    sidebar.classList.remove('open');
+    sidebarOverlay.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+});
+
+sidebarOverlay.addEventListener('click', function () {
+    sidebar.classList.remove('open');
+    sidebarOverlay.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+});
