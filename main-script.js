@@ -78,7 +78,7 @@ signinButton.addEventListener("click", function(){
 closeIcon.addEventListener("click", function(){
   signinPage.classList.remove("openSignin");
   document.body.classList.remove("no-scroll");
-  signinPage.classList.add("closeSignin")
+  signinPage.classList.add("closeSignin");
 })
 
 getstarted.addEventListener("click",function(){
